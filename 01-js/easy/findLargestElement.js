@@ -6,8 +6,17 @@
 */
 
 function findLargestElement(numbers) {
-    let count=0
-    
-} 
+    let bignum=0
+    for(let i=0;numbers.length>i;i++){
+    if(numbers[i]>bignum){
+        bignum=numbers[i]
+    }
+    else{
+        continue
+    }
+    }
+    return bignum
 
+} 
+console.log(findLargestElement([1,5,8,4,5,3,6,3,444]))
 module.exports = findLargestElement;
