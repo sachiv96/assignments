@@ -14,7 +14,32 @@
 */
 
 function calculateTotalSpentByCategory(transactions) {
-  return [];
+
+  const catotal=transactions.reduce((acc,{category,price})=>{
+    acc[category]=(acc[category]||0)+price
+   return acc
+
+  },{})
+
+
+
+
+
+
+   return Object.entries(catotal).map(([category, totalSpent]) => ({
+    category,
+    totalSpent
+  }));
 }
+
+
+
+console.log(calculateTotalSpentByCategory([
+  { id: 1, price: 10, category: 'Food', itemName: 'Pizza' },
+  { id: 2, price: 20, category: 'Food', itemName: 'Burger' },
+  { id: 3, price: 30, category: 'Travel', itemName: 'Taxi' }
+]))
+
+
 
 module.exports = calculateTotalSpentByCategory;
